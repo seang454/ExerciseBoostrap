@@ -807,27 +807,49 @@
     ></script>
     <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
     <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
-      particlesJS.load("particles-js", "firework.json", function () {
-        console.log("Firework style loaded!");
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 0 },
+          color: { value: ["#ff0000", "#ff9900", "#ffdd00", "#00ff00", "#00ccff", "#9900ff"] },
+          shape: { type: "circle" },
+          opacity: { value: 1, random: true },
+          size: { value: 4, random: true },
+          line_linked: { enable: false },
+          move: {
+            enable: true,
+            speed: 10,
+            direction: "none",
+            random: true,
+            straight: false,
+            out_mode: "out",
+            bounce: false,
+            attract: { enable: false },
+          },
+        },
+        interactivity: {
+          detect_on: "canvas",
+          events: {
+            onhover: { enable: true, mode: "repulse" },
+            onclick: { enable: true, mode: "push" },
+            resize: true,
+          },
+          modes: {
+            grab: { distance: 200, line_linked: { opacity: 1 } },
+            bubble: { distance: 250, size: 8, duration: 2, opacity: 1 },
+            repulse: { distance: 200 },
+            push: { particles_nb: 50 },
+            remove: { particles_nb: 10 },
+          },
+        },
+        retina_detect: true,
+        background: { color: { value: "#000000" } },
       });
     </script>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    
     <script>
       AOS.init();
     </script>
-    <!-- <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "WebSite",
-        "name": "Website Name",
-        "url": "https://example.com",
-        "potentialAction": {
-          "@type": "SearchAction",
-          "target": "https://example.com/search?q={search_term_string}",
-          "query-input": "required name=search_term_string"
-        }
-      }
-      </script> -->
   </body>
 </html>
